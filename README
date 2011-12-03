@@ -1,4 +1,4 @@
 >> INFORMATION <<
 Laptop - Scripts used to control the GPUs on my HP DM4-1014TX Laptop
-Public.sh - An old script that used to be used for the shell in public SSH tunnels.
+Public.sh - A script that can be used as a shell for public SSH tunnels.
 Utilities - Scripts used to clean and update my home computers.
