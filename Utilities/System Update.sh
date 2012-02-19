@@ -8,7 +8,7 @@ echo \>\> Upgrading Packages
 sudo packer -Suu
 
 echo \>\> Removing Unused Packages
-sudo pacman -Rcsn $(sudo pacman -Qqdt)
+sudo pacman -Rcsn $(pacman -Qqdt)
 
 echo \>\> Cleaning Cache
 sudo pacman -Sc

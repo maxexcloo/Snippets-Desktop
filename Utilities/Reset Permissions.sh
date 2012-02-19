@@ -1,13 +1,16 @@
 #!/bin/bash
-# Sets default permissions on all files.
+# Set default permissions on all files.
 
-echo \>\> Setting Folder Permissions
-find ~ -type d -exec chmod g=,o= {} \;
+echo \>\> Setting Permissions: Directories
+find ~ -type d -exec chmod 700 {} \;
 
-echo \>\> Setting File Permissions
-find ~ -type f -exec chmod g=,o= {} \;
+echo \>\> Setting Permissions: Files
+find ~ -type f -exec chmod 600 {} \;
 
-echo \>\> Setting Script Permissions
+echo \>\> Setting Permissions: Desktop
+find ~ -name *.desktop -type f -exec chmod +x {} \;
+
+echo \>\> Setting Permissions: Scripts
 find ~ -name *.sh -type f -exec chmod +x {} \;
 
 echo ====================
