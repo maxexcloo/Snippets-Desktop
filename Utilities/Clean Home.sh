@@ -1,23 +1,23 @@
 #!/bin/bash
 # Cleans unused files in the home directory.
 
-# Applications
-rm -rf ~/.local/share/vlc
-rm -rf ~/.mplayer
-rm -rf ~/.qt
-rm -rf ~/.sshterm
+#############
+## General ##
+#############
 
 # General
 rm -rf ~/.bash_history
 rm -rf ~/.cache
 rm -rf ~/.config/autostart
 rm -rf ~/.dmrc
+rm -rf ~/.kde4/tmp-*/*
+rm -rf ~/.qt
 rm -rf ~/.thumbnails
 rm -rf ~/.xsession-errors
 
 # Local
-rm -rf ~/.kde4/tmp-*/*
 rm -rf ~/.local/share/.local-mail.directory
+rm -rf ~/.local/share/.Tras*
 rm -rf ~/.local/share/local-mail
 rm -rf ~/.local/share/recent*
 rm -rf ~/.local/share/Tras*
@@ -30,6 +30,16 @@ rm -rf ~/.local/share/desktop-directories
 cp -R ~/Backups/Settings/Menus/applications.menu ~/.config/menus/
 cp -R ~/Backups/Settings/Menus/applications ~/.local/share/
 cp -R ~/Backups/Settings/Menus/desktop-directories ~/.local/share/
+
+# Security Tools
+rm -rf ~/.config/ettercap_gtk
+rm -rf ~/.kismet
+rm -rf ~/.wireshark
+rm -rf ~/sslstrip.log
+
+##################
+## Applications ##
+##################
 
 # Akonadi
 rm -rf ~/.config/akonadi/agent*
@@ -51,6 +61,9 @@ cp -R ~/Backups/Settings/Chromium ~/.config/chromium
 # Clementine
 rm -rf ~/.config/Clementine/jamendo.db
 rm -rf ~/.config/Clementine/networkcache
+
+# Deadbeef
+rm -rf ~/.config/deadbeef/playlists/*
 
 # Deluge
 rm -rf ~/.config/deluge/*~
@@ -113,12 +126,14 @@ rm -rf ~/.gconfd
 # Java
 rm -rf ~/.icedtea
 rm -rf ~/.java
+rm -rf ~/.sshterm
 
 # JDownloader
-rm -rf ~/.jd/.junique
-rm -rf ~/.jd/backup/database_*.zip
-rm -rf ~/.jd/captchas/*
-rm -rf ~/.jd/container/*
+rm -rf ~/.jdownloader/.junique
+rm -rf ~/.jdownloader/backup
+rm -rf ~/.jdownloader/captchas/*
+rm -rf ~/.jdownloader/container/*
+rm -rf ~/.jdownloader/*.log
 
 # KDE
 rm -rf ~/.kde
@@ -163,9 +178,27 @@ sed -i 's/PastQueries\=.*/PastQueries=/g' ~/.kde4/share/config/krunnerrc
 sed -i 's/Replacement Text History\=.*/Replacement Text History\=/g' ~/.kde4/share/config/katerc
 sed -i 's/Search Pattern History\=.*/Search Pattern History\=/g' ~/.kde4/share/config/katerc
 
+# MCEdit
+rm -rf ~/.mcedit/*.log
+rm -rf ~/.mcedit/history.txt
+rm -rf ~/.mcedit/README.html
+rm -rf ~/.pymclevel
+
 # Minecraft
 rm -rf ~/.*craft/*.log
 rm -rf ~/.*craft/stats
+rm -rf ~/.spoutcraft/backups
+rm -rf ~/.spoutcraft/logs
+rm -rf ~/.spoutcraft/spoutcraft/cache
+
+# MPlayer
+rm -rf ~/.mplayer
+
+# Puddletag
+rm -rf ~/.puddletag/*.bak
+rm -rf ~/.puddletag/plugins
+rm -rf ~/.puddletag/qt.conf
+rm -rf ~/.puddletag/windowsizes
 
 # Transmission
 rm -rf ~/.config/transmission/*.dat
@@ -182,3 +215,6 @@ rm -rf ~/Resources/Virtual\ Machines/*/*.vbox-prev
 rm -rf ~/.xchat2/scrollback/*/\**.txt
 rm -rf ~/.xchat2/scrollback/*/*_.txt
 rm -rf ~/.xchat2/scrollback/*/mib_*.txt
+
+# VLC
+rm -rf ~/.local/share/vlc
