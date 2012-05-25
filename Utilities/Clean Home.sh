@@ -8,9 +8,11 @@
 # General
 rm -rf ~/.bash_history
 rm -rf ~/.cache
+rm -rf ~/.config/anjuta
 rm -rf ~/.config/autostart
 rm -rf ~/.dmrc
 rm -rf ~/.kde4/tmp-*/*
+rm -rf ~/.python-eggs
 rm -rf ~/.qt
 rm -rf ~/.thumbnails
 rm -rf ~/.xsession-errors
@@ -53,6 +55,10 @@ rm -rf ~/.audacity-data/AutoSave
 # Audio
 rm -rf ~/.config/libimobiledevice
 rm -rf ~/.esd_auth
+rm -rf ~/.gtkpod/session
+
+# Bitcoin
+rm -rf ~/.bitcoin/*.log
 
 # Chromium
 rm -rf ~/.config/chromium
@@ -92,12 +98,12 @@ rm -rf ~/.macromedia
 # Firefox Folders
 rm -rf ~/.mozilla/firefox/*/adblockplus/cache.js
 rm -rf ~/.mozilla/firefox/*/adblockplus/patterns-backup*.ini
+rm -rf ~/.mozilla/firefox/*/anticontainer_plugins
 rm -rf ~/.mozilla/firefox/*/bookmarkbackups
 rm -rf ~/.mozilla/firefox/*/Cache
 rm -rf ~/.mozilla/firefox/*/HTTPSEverywhereUserRules
 rm -rf ~/.mozilla/firefox/*/OfflineCache
 rm -rf ~/.mozilla/firefox/*/startupCache
-rm -rf ~/.mozilla/firefox/*/weave/logs/*
 
 # Firefox Files
 rm -rf ~/.mozilla/firefox/*/cert_override.txt
@@ -107,6 +113,7 @@ rm -rf ~/.mozilla/firefox/*/content-prefs.sqlite
 rm -rf ~/.mozilla/firefox/*/mimeTypes.rdf
 rm -rf ~/.mozilla/firefox/*/pluginreg.dat
 rm -rf ~/.mozilla/firefox/*/urlclassifier*
+rm -rf ~/.mozilla/firefox/*/weave/logs/*
 rm -rf ~/.mozilla/firefox/*/webappsstore.sqlite
 
 # Geeqie
@@ -151,45 +158,33 @@ rm -rf ~/.kde4/share/apps/kded
 rm -rf ~/.kde4/share/apps/kfileplaces/bookmarks.xml.*
 rm -rf ~/.kde4/share/apps/konqueror
 rm -rf ~/.kde4/share/apps/kssl
-rm -rf ~/.kde4/share/apps/kwin/scripts
+rm -rf ~/.kde4/share/apps/okular/docdata
 rm -rf ~/.kde4/share/apps/QtCurve
 rm -rf ~/.kde4/share/apps/RecentDocuments
 rm -rf ~/.kde4/share/apps/remoteview
 
 # KDE Config
-rm -rf ~/.kde4/share/config/kresources/*
 rm -rf ~/.kde4/share/config/device_automounter_kcmrc
 rm -rf ~/.kde4/share/config/kded_device_automounterrc
 
 # KDE Scripts
 for i in ~/.kde4/share/config/*; do
-	# Files
-	#sed -i '/File.*\[\$e\]\=.*/d' $i
-	#sed -i '/Name.*\[\$e\]\=.*/d' $i
-	#sed -i '/View.*\=.*/d' $i
-
 	# History
 	sed -i 's/History Items\[\$e\]\=.*/History Items\[\$e\]\=/g' $i
 	sed -i 's/Recent Files\[\$e\]\=.*/Recent Files\[\$e\]\=/g' $i
 	sed -i 's/Recent URLs\[\$e\]\=.*/Recent URLs\[\$e\]\=/g' $i
 done
-sed -i 's/LaunchCounts\=.*/LaunchCounts\=/g' ~/.kde4/share/config/krunnerrc
-sed -i 's/PastQueries\=.*/PastQueries=/g' ~/.kde4/share/config/krunnerrc
 sed -i 's/Replacement Text History\=.*/Replacement Text History\=/g' ~/.kde4/share/config/katerc
 sed -i 's/Search Pattern History\=.*/Search Pattern History\=/g' ~/.kde4/share/config/katerc
-
-# MCEdit
-rm -rf ~/.mcedit/*.log
-rm -rf ~/.mcedit/history.txt
-rm -rf ~/.mcedit/README.html
-rm -rf ~/.pymclevel
 
 # Minecraft
 rm -rf ~/.*craft/*.log
 rm -rf ~/.*craft/stats
-rm -rf ~/.spoutcraft/backups
-rm -rf ~/.spoutcraft/logs
-rm -rf ~/.spoutcraft/spoutcraft/cache
+rm -rf ~/.*craft/ModLoader.txt
+
+# Mixxx
+rm -rf ~/.mixxx/midi/*
+rm -rf ~/.mixxx/*.log
 
 # MPlayer
 rm -rf ~/.mplayer

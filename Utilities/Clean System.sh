@@ -43,10 +43,9 @@ sudo update-desktop-database
 echo \>\> Updating Files
 kbuildsycoca4 --noincremental
 sudo update-ca-certificates
-#sudo update-patterndb
-#sudo update-pciids
-#sudo update-usbids.sh
-#sudo vboxbuild
+sudo update-patterndb
+sudo update-pciids
+sudo update-usbids.sh
 
 echo ====================
 echo Finished!
