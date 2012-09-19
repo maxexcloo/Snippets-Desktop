@@ -12,7 +12,3 @@ sudo pacman -Rcsn $(pacman -Qqdt)
 
 echo \>\> Cleaning Cache
 sudo pacman -Sc
-
-echo ====================
-echo Finished!
-read
