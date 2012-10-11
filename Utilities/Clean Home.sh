@@ -36,7 +36,7 @@ rm -rf ~/.local/share/applications ~/.local/share/desktop-directories
 cp -R ~/Backups/Settings/Menus/applications.menu ~/.config/menus/
 cp -R ~/Backups/Settings/Menus/applications ~/.local/share/
 cp -R ~/Backups/Settings/Menus/desktop-directories ~/.local/share/
-cp -R ~/Backups/Settings/Menus/mimeapps.list ~/.local/share/
+cp -R ~/Backups/Settings/Menus/*.list ~/.local/share/
 
 # Security Tools
 rm -rf ~/.config/ettercap_gtk
@@ -200,6 +200,13 @@ rm -rf ~/Music/Mixxx
 
 # MPlayer
 rm -rf ~/.mplayer
+
+# NX
+rm -rf ~/.nx/cache-*
+rm -rf ~/.nx/*rdc*
+rm -rf ~/.nx/S-*
+rm -rf ~/.nx/temp
+sed -i 's/LastSession\=.*s/LastSession\=/g' ~/.opennx
 
 # Pidgin
 rm -rf ~/.purple/blist.xml
