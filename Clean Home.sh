@@ -5,6 +5,10 @@
 ## General ##
 #############
 
+# Audio
+rm -rf ~/.config/libimobiledevice
+rm -rf ~/.esd_auth
+
 # General
 rm -rf ~/.bash_history
 rm -rf ~/.cache
@@ -16,6 +20,7 @@ rm -rf ~/.xsession-errors
 # Libraries
 rm -rf ~/.config/anjuta
 rm -rf ~/.config/enchant
+rm -rf ~/.gnupg
 rm -rf ~/.p7zip
 rm -rf ~/.pki
 rm -rf ~/.python-eggs
@@ -25,6 +30,7 @@ rm -rf ~/.qt
 rm -rf ~/.local/share/.local-mail.directory
 rm -rf ~/.local/share/.Tras*
 rm -rf ~/.local/share/contacts/*.txt
+rm -rf ~/.local/share/gvfs-metadata
 rm -rf ~/.local/share/icons
 rm -rf ~/.local/share/mime
 rm -rf ~/.local/share/recent*
@@ -32,7 +38,9 @@ rm -rf ~/.local/share/Tras*
 rm -rf ~/.local/share/user-places.xbel.*
 
 # Menus
-rm -rf ~/.config/menus/* ~/.local/share/applications ~/.local/share/desktop-directories
+rm -rf ~/.config/menus/*
+rm -rf ~/.local/share/applications
+rm -rf ~/.local/share/desktop-directories
 cp -R ~/Backups/Settings/Menus/applications.menu ~/.config/menus/
 cp -R ~/Backups/Settings/Menus/applications ~/.local/share/
 cp -R ~/Backups/Settings/Menus/desktop-directories ~/.local/share/
@@ -51,10 +59,6 @@ rm -rf ~/sslstrip.log
 rm -rf ~/.audacity-data/AutoSave
 rm -rf ~/.audacity-data/presets
 
-# Audio
-rm -rf ~/.config/libimobiledevice
-rm -rf ~/.esd_auth
-
 # Bitcoin
 rm -rf ~/.bitcoin/*.log
 
@@ -63,7 +67,9 @@ rm -rf ~/.config/google-chrome
 cp -R ~/Backups/Settings/Chrome ~/.config/google-chrome
 
 # Clementine
+rm -rf ~/.config/Clementine/*.bak
 rm -rf ~/.config/Clementine/jamendo.db
+rm -rf ~/.config/Clementine/moodbarcache
 rm -rf ~/.config/Clementine/networkcache
 
 # Deadbeef
@@ -96,10 +102,13 @@ rm -rf ~/.mozilla/firefox/*/adblockplus/cache.js
 rm -rf ~/.mozilla/firefox/*/adblockplus/patterns-backup*.ini
 rm -rf ~/.mozilla/firefox/*/bookmarkbackups
 rm -rf ~/.mozilla/firefox/*/Cache
+rm -rf ~/.mozilla/firefox/*/chrome
 rm -rf ~/.mozilla/firefox/*/HTTPSEverywhereUserRules
 rm -rf ~/.mozilla/firefox/*/mozilla-media-cache
 rm -rf ~/.mozilla/firefox/*/OfflineCache
 rm -rf ~/.mozilla/firefox/*/pluginreg.dat
+rm -rf ~/.mozilla/firefox/*/safebrowsing
+rm -rf ~/.mozilla/firefox/*/startupCache
 rm -rf ~/.mozilla/firefox/*/urlclassifier*
 rm -rf ~/.mozilla/firefox/*/weave/logs/*
 rm -rf ~/.mozilla/firefox/*/webapps
@@ -117,6 +126,10 @@ rm -rf ~/.gimp*/tmp
 rm -rf ~/.config/dconf
 rm -rf ~/.gconf
 rm -rf ~/.gconfd
+rm -rf ~/.gnome
+
+# Inkscape
+rm -rf ~/.config/inkscape/*.log
 
 # Java
 rm -rf ~/.java
@@ -138,6 +151,7 @@ rm -rf ~/.kde4/share/kde4
 rm -rf ~/.kde4/share/wallpapers
 rm -rf ~/.kde4/shutdown
 rm -rf ~/.kde4/tmp-*/*
+rm -rf ~/.local/share/akonadi
 
 # KDE Applications
 rm -rf ~/.kde4/share/apps/bluedevil
@@ -193,6 +207,9 @@ rm -rf ~/.minecraft/texturepacks-mp-cache
 # MPlayer
 rm -rf ~/.mplayer
 
+# nTorrent
+rm -rf ~/.ntorrent/log
+
 # NX
 rm -rf ~/.nx/cache-*
 rm -rf ~/.nx/*rdc*
@@ -200,19 +217,11 @@ rm -rf ~/.nx/S-*
 rm -rf ~/.nx/temp
 sed -i 's/LastSession\=.*s/LastSession\=/g' ~/.opennx
 
-# Pidgin
-rm -rf ~/.purple/blist.xml
-rm -rf ~/.purple/certificates
-rm -rf ~/.purple/icons
-rm -rf ~/.purple/smileys
-rm -rf ~/.purple/status.xml
-rm -rf ~/.purple/xmpp-caps.xml
-
 # Technic Launcher
 rm -rf ~/.techniclauncher/logs/*
-rm -rf ~/.techniclauncher/tekkit/*.log
-rm -rf ~/.techniclauncher/tekkit/backups
-rm -rf ~/.techniclauncher/tekkit/stats
+rm -rf ~/.techniclauncher/*/*.log
+rm -rf ~/.techniclauncher/*/backups
+rm -rf ~/.techniclauncher/*/stats
 
 # Transmission
 rm -rf ~/.config/transmission/*.dat
