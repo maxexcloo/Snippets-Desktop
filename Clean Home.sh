@@ -29,7 +29,6 @@ rm -rf ~/.qt
 # Local
 rm -rf ~/.local/share/.local-mail.directory
 rm -rf ~/.local/share/.Tras*
-rm -rf ~/.local/share/contacts/*.txt
 rm -rf ~/.local/share/gvfs-metadata
 rm -rf ~/.local/share/icons
 rm -rf ~/.local/share/mime
@@ -47,7 +46,6 @@ cp -R ~/Backups/Settings/Menus/desktop-directories ~/.local/share/
 
 # Security Tools
 rm -rf ~/.config/ettercap_gtk
-rm -rf ~/.kismet
 rm -rf ~/.wireshark
 rm -rf ~/sslstrip.log
 
@@ -83,8 +81,7 @@ rm -rf ~/.config/deluge/icons
 rm -rf ~/.config/deluge/ipc
 
 # Dia
-rm -rf ~/.dia/*/*
-rmdir ~/.dia/*
+rm -rf ~/.dia/*/
 rm -rf ~/.dia/menurc
 rm -rf ~/.dia/pluginrc
 
@@ -133,14 +130,11 @@ rm -rf ~/.config/inkscape/*.log
 
 # Java
 rm -rf ~/.java
-rm -rf ~/.sshterm
 
 # JDownloader
 rm -rf ~/.jdownloader/*.log
-rm -rf ~/.jdownloader/.junique
 rm -rf ~/.jdownloader/backup
 rm -rf ~/.jdownloader/captchas/*
-rm -rf ~/.jdownloader/container/*
 rm -rf ~/.jdownloader/updateLog.txt
 
 # KDE
@@ -186,9 +180,6 @@ rm -rf ~/.kde4/share/config/session
 
 # KDE History
 for i in ~/.kde4/share/config/*; do
-	sed -i 's/History Items\[\$e\]\=.*/History Items\[\$e\]\=/g' $i
-	sed -i 's/Recent Files\[\$e\]\=.*/Recent Files\[\$e\]\=/g' $i
-	sed -i 's/Recent URLs\[\$e\]\=.*/Recent URLs\[\$e\]\=/g' $i
 	sed -i 's/Replacement Text History\=.*/Replacement Text History\=/g' $i
 	sed -i 's/Search Pattern History\=.*/Search Pattern History\=/g' $i
 done
@@ -201,8 +192,6 @@ rm -rf ~/.local/share/mcomix
 # Minecraft
 rm -rf ~/.minecraft/*.log
 rm -rf ~/.minecraft/crash-reports
-rm -rf ~/.minecraft/stats
-rm -rf ~/.minecraft/texturepacks-mp-cache
 
 # MPlayer
 rm -rf ~/.mplayer
@@ -215,13 +204,15 @@ rm -rf ~/.nx/cache-*
 rm -rf ~/.nx/*rdc*
 rm -rf ~/.nx/S-*
 rm -rf ~/.nx/temp
-sed -i 's/LastSession\=.*s/LastSession\=/g' ~/.opennx
 
-# Technic Launcher
-rm -rf ~/.techniclauncher/logs/*
-rm -rf ~/.techniclauncher/*/*.log
-rm -rf ~/.techniclauncher/*/backups
-rm -rf ~/.techniclauncher/*/stats
+# Processing
+rm -rf ~/.processing/console
+rm -rf ~/.processing/debug
+rm -rf ~/.processing/recent.txt
+rm -rf ~/.processing/sketchbook
+
+# RDesktop
+rm -rf ~/.rdesktop
 
 # Transmission
 rm -rf ~/.config/transmission/*.dat
