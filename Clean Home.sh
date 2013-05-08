@@ -18,7 +18,6 @@ rm -rf ~/.thumbnails
 rm -rf ~/.xsession-errors
 
 # Libraries
-rm -rf ~/.config/anjuta
 rm -rf ~/.config/enchant
 rm -rf ~/.gnupg
 rm -rf ~/.p7zip
@@ -57,9 +56,6 @@ rm -rf ~/sslstrip.log
 rm -rf ~/.audacity-data/AutoSave
 rm -rf ~/.audacity-data/presets
 
-# Bitcoin
-rm -rf ~/.bitcoin/*.log
-
 # Chromium
 rm -rf ~/.config/google-chrome
 cp -R ~/Backups/Settings/Chrome ~/.config/google-chrome
@@ -69,10 +65,6 @@ rm -rf ~/.config/Clementine/*.bak
 rm -rf ~/.config/Clementine/jamendo.db
 rm -rf ~/.config/Clementine/moodbarcache
 rm -rf ~/.config/Clementine/networkcache
-
-# Deadbeef
-rm -rf ~/.config/deadbeef/playlists/*
-rm -rf ~/.config/deadbeef/socket
 
 # Deluge
 rm -rf ~/.config/deluge/*~
@@ -139,7 +131,7 @@ rm -rf ~/.jdownloader/updateLog.txt
 
 # KDE
 rm -rf ~/.kde
-rm -rf ~/.kde4/share/applink
+rm -rf ~/.kde4/share/appl*
 rm -rf ~/.kde4/share/autostart
 rm -rf ~/.kde4/share/kde4
 rm -rf ~/.kde4/share/wallpapers
@@ -148,15 +140,12 @@ rm -rf ~/.kde4/tmp-*/*
 rm -rf ~/.local/share/akonadi
 
 # KDE Applications
-rm -rf ~/.kde4/share/apps/bluedevil
-rm -rf ~/.kde4/share/apps/desktoptheme/internal-system-colors
 rm -rf ~/.kde4/share/apps/dolphin/view_properties
 rm -rf ~/.kde4/share/apps/gwenview/recent*
 rm -rf ~/.kde4/share/apps/k3b
 rm -rf ~/.kde4/share/apps/kabc
 rm -rf ~/.kde4/share/apps/kate/metainfos
 rm -rf ~/.kde4/share/apps/kate/sessions
-rm -rf ~/.kde4/share/apps/kconf_update
 rm -rf ~/.kde4/share/apps/kcookiejar
 rm -rf ~/.kde4/share/apps/kded
 rm -rf ~/.kde4/share/apps/kfileplaces/bookmarks.xml.*
@@ -165,7 +154,6 @@ rm -rf ~/.kde4/share/apps/klipper
 rm -rf ~/.kde4/share/apps/konqueror
 rm -rf ~/.kde4/share/apps/korganizer/*~
 rm -rf ~/.kde4/share/apps/kpdf
-rm -rf ~/.kde4/share/apps/kres-migrator
 rm -rf ~/.kde4/share/apps/kssl
 rm -rf ~/.kde4/share/apps/kwin
 rm -rf ~/.kde4/share/apps/okular/docdata
@@ -173,9 +161,6 @@ rm -rf ~/.kde4/share/apps/okular/structures
 rm -rf ~/.kde4/share/apps/plasma
 rm -rf ~/.kde4/share/apps/QtCurve
 rm -rf ~/.kde4/share/apps/RecentDocuments
-rm -rf ~/.kde4/share/apps/remoteview
-rm -rf ~/.kde4/share/config/device_automounter_kcmrc
-rm -rf ~/.kde4/share/config/kded_device_automounterrc
 rm -rf ~/.kde4/share/config/session
 
 # KDE History
@@ -183,8 +168,6 @@ for i in ~/.kde4/share/config/*; do
 	sed -i 's/Replacement Text History\=.*/Replacement Text History\=/g' $i
 	sed -i 's/Search Pattern History\=.*/Search Pattern History\=/g' $i
 done
-sed -i 's/LaunchCounts\=.*/LaunchCounts\=/g' ~/.kde4/share/config/krunnerrc
-sed -i 's/PastQueries\=.*/PastQueries\=/g' ~/.kde4/share/config/krunnerrc
 
 # MComix
 rm -rf ~/.local/share/mcomix
@@ -196,9 +179,6 @@ rm -rf ~/.minecraft/crash-reports
 # MPlayer
 rm -rf ~/.mplayer
 
-# nTorrent
-rm -rf ~/.ntorrent/log
-
 # NX
 rm -rf ~/.nx/cache-*
 rm -rf ~/.nx/*rdc*
@@ -206,10 +186,7 @@ rm -rf ~/.nx/S-*
 rm -rf ~/.nx/temp
 
 # Processing
-rm -rf ~/.processing/console
-rm -rf ~/.processing/debug
 rm -rf ~/.processing/recent.txt
-rm -rf ~/.processing/sketchbook
 
 # RDesktop
 rm -rf ~/.rdesktop

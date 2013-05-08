@@ -5,7 +5,7 @@ echo \>\> Setting Ownership
 sudo chown -R $USER:users ~
 
 echo \>\> Setting Permissions: Directories
-find ~ -type d -exec chmod 700 {} \;
+find ~ -type d -exec chmod 0700 {} \;
 
 echo \>\> Setting Permissions: Files
 find ~ -type f ! -executable -exec chmod 0600 {} \;

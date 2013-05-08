@@ -1,2 +1,3 @@
 #!/bin/bash
-echo "DIGD" > /sys/kernel/debug/vgaswitcheroo/switch
+echo DIGD > /sys/kernel/debug/vgaswitcheroo/switch
+echo OFF > /sys/kernel/debug/vgaswitcheroo/switch

@@ -1,9 +1,6 @@
 #!/bin/bash
 # Cleans unused files on the system.
 
-# Clean System Home
-sudo rm -rf /root/*
-
 # Mask Options
 umask 022
 
@@ -11,19 +8,19 @@ umask 022
 shopt -s dotglob
 
 echo \>\> Cleaning Directories
-sudo find / -name '*.unison.tmp*' -exec rm -rf {} \;
+sudo find / -type d -name '*.unison.tmp*' -exec rm -rf {} \;
 sudo find / -type d -name '.Tras*' -exec rm -rf {} \;
 sudo find / -type d -name 'lost+found' -exec rm -rf {} \;
 sudo rm -rf /home/*/.cache /home/*/.local/share/Tras*
 
-echo \>\> Cleaning Pacman
+echo \>\> Cleaning Package Manager
 sudo find /etc/ -type f -name '*.pacnew' -exec rm {} \;
 sudo find /etc/ -type f -name '*.pacorig' -exec rm {} \;
 sudo find /etc/ -type f -name '*.pacsave' -exec rm {} \;
 sudo pacman -Sc --noconfirm > /dev/null
 
 echo \>\> Cleaning Settings
-sudo rm -rf /etc/skel/* /etc/skel/.??*
+sudo rm -rf /etc/skel/*
 sudo rm -rf /etc/xdg/menus/*
 sudo cp /home/$USER/Backups/Settings/Menus/kde-applications.menu /etc/xdg/menus/
 sudo chmod 755 /etc/xdg/menus/kde-applications.menu
