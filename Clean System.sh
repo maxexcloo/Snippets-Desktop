@@ -17,7 +17,7 @@ echo \>\> Cleaning Package Manager
 sudo find /etc/ -type f -name '*.pacnew' -exec rm {} \;
 sudo find /etc/ -type f -name '*.pacorig' -exec rm {} \;
 sudo find /etc/ -type f -name '*.pacsave' -exec rm {} \;
-sudo pacman -Sc --noconfirm > /dev/null
+sudo pacman -Sc --noconfirm &> /dev/null
 
 echo \>\> Cleaning Settings
 sudo rm -rf /etc/skel/*

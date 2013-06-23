@@ -1,9 +1,9 @@
 #!/bin/bash
 # Cleans unused files in the home directory.
 
-#############
-## General ##
-#############
+##########
+## Base ##
+##########
 
 # Audio
 rm -rf ~/.config/libimobiledevice
@@ -18,8 +18,10 @@ rm -rf ~/.thumbnails
 rm -rf ~/.xsession-errors
 
 # Libraries
+rm -rf ~/.config/dconf
 rm -rf ~/.config/enchant
 rm -rf ~/.gnupg
+rm -rf ~/.local/share/gegl*
 rm -rf ~/.p7zip
 rm -rf ~/.pki
 rm -rf ~/.python-eggs
@@ -37,28 +39,23 @@ rm -rf ~/.local/share/user-places.xbel.*
 
 # Menus
 rm -rf ~/.config/menus/*
+cp -R ~/Backups/Local/Menus/applications.menu ~/.config/menus/
 rm -rf ~/.local/share/applications
+cp -R ~/Backups/Local/Menus/applications ~/.local/share/
 rm -rf ~/.local/share/desktop-directories
-cp -R ~/Backups/Settings/Menus/applications.menu ~/.config/menus/
-cp -R ~/Backups/Settings/Menus/applications ~/.local/share/
-cp -R ~/Backups/Settings/Menus/desktop-directories ~/.local/share/
+cp -R ~/Backups/Local/Menus/desktop-directories ~/.local/share/
 
 # Security Tools
 rm -rf ~/.config/ettercap_gtk
-rm -rf ~/.wireshark
 rm -rf ~/sslstrip.log
 
-##################
-## Applications ##
-##################
+#############
+## Desktop ##
+#############
 
 # Audacity
 rm -rf ~/.audacity-data/AutoSave
 rm -rf ~/.audacity-data/presets
-
-# Chromium
-rm -rf ~/.config/google-chrome
-cp -R ~/Backups/Settings/Chrome ~/.config/google-chrome
 
 # Clementine
 rm -rf ~/.config/Clementine/*.bak
@@ -67,8 +64,8 @@ rm -rf ~/.config/Clementine/moodbarcache
 rm -rf ~/.config/Clementine/networkcache
 
 # Deluge
-rm -rf ~/.config/deluge/*~
 rm -rf ~/.config/deluge/*.state
+rm -rf ~/.config/deluge/*~
 rm -rf ~/.config/deluge/icons
 rm -rf ~/.config/deluge/ipc
 
@@ -87,32 +84,27 @@ rm -rf ~/.filezilla/search.xml
 rm -rf ~/.putty/randomseed
 
 # Firefox
-rm -rf ~/.mozilla/firefox/*/adblockplus/cache.js
 rm -rf ~/.mozilla/firefox/*/adblockplus/patterns-backup*.ini
 rm -rf ~/.mozilla/firefox/*/bookmarkbackups
-rm -rf ~/.mozilla/firefox/*/Cache
-rm -rf ~/.mozilla/firefox/*/chrome
+rm -rf ~/.mozilla/firefox/*/healthreport
 rm -rf ~/.mozilla/firefox/*/HTTPSEverywhereUserRules
-rm -rf ~/.mozilla/firefox/*/mozilla-media-cache
-rm -rf ~/.mozilla/firefox/*/OfflineCache
 rm -rf ~/.mozilla/firefox/*/pluginreg.dat
-rm -rf ~/.mozilla/firefox/*/safebrowsing
-rm -rf ~/.mozilla/firefox/*/startupCache
-rm -rf ~/.mozilla/firefox/*/urlclassifier*
 rm -rf ~/.mozilla/firefox/*/weave/logs/*
-rm -rf ~/.mozilla/firefox/*/webapps
 
 # Flash
 rm -rf ~/.adobe
 rm -rf ~/.macromedia
 
 # GIMP
-rm -rf ~/.local/share/gegl*
 rm -rf ~/.gimp*/*~
 rm -rf ~/.gimp*/tmp
 
+# Google Chrome
+rm -rf ~/.config/google-chrome/Default/Pepper\ Data
+rm -rf ~/.config/google-chrome/PepperFlash
+
 # Gnome
-rm -rf ~/.config/dconf
+rm -rf ~/.config/gconf
 rm -rf ~/.gconf
 rm -rf ~/.gconfd
 rm -rf ~/.gnome
@@ -124,6 +116,7 @@ rm -rf ~/.config/inkscape/*.log
 rm -rf ~/.java
 
 # JDownloader
+rm -rf ~/.jdownloader/.junique
 rm -rf ~/.jdownloader/*.log
 rm -rf ~/.jdownloader/backup
 rm -rf ~/.jdownloader/captchas/*
@@ -172,6 +165,9 @@ done
 # MComix
 rm -rf ~/.local/share/mcomix
 
+# Meld
+rm -rf ~/.local/share/meld
+
 # Minecraft
 rm -rf ~/.minecraft/*.log
 rm -rf ~/.minecraft/crash-reports
@@ -180,16 +176,21 @@ rm -rf ~/.minecraft/crash-reports
 rm -rf ~/.mplayer
 
 # NX
-rm -rf ~/.nx/cache-*
 rm -rf ~/.nx/*rdc*
+rm -rf ~/.nx/cache-*
 rm -rf ~/.nx/S-*
 rm -rf ~/.nx/temp
 
 # Processing
+rm -rf ~/.processing/console/*
+rm -rf ~/.processing/debug/*
 rm -rf ~/.processing/recent.txt
 
 # RDesktop
 rm -rf ~/.rdesktop
+
+# Sublime Text
+rm -rf ~/.config/sublime-text-2/Backup
 
 # Transmission
 rm -rf ~/.config/transmission/*.dat
