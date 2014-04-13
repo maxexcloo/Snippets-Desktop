@@ -1,51 +1,43 @@
 #!/bin/bash
 # Cleans unused files on the system.
 
-# Mask Options
+# Check Root
+if [[ $EUID -ne 0 ]]; then
+	echo "This script must be run as root."
+	exit 1
+fi
+
+echo ">> Setting Up"
+shopt -s dotglob
 umask 022
 
-# Wildcard Options
-shopt -s dotglob
+echo ">> Cleaning Directories"
+find / -type d -name '*.unison.tmp*' -exec rm -rf {} \;
+find / -type d -name '.Tras*' -exec rm -rf {} \;
+find / -type d -name 'lost+found' -exec rm -rf {} \;
+rm -rf /home/*/.cache /home/*/.local/share/Tras*
 
-echo \>\> Cleaning Directories
-sudo find / -type d -name '*.unison.tmp*' -exec rm -rf {} \;
-sudo find / -type d -name '.Tras*' -exec rm -rf {} \;
-sudo find / -type d -name 'lost+found' -exec rm -rf {} \;
-sudo rm -rf /home/*/.cache /home/*/.local/share/Tras*
+echo ">> Cleaning Etc"
+find /etc/ -type f -name '*.conf.default' -exec rm {} \;
+find /etc/ -type f -name '*.example' -exec rm {} \;
+find /etc/ -type f -name '*.example-*' -exec rm {} \;
+find /etc/ -type f -name 'example.*' -exec rm {} \;
+find /etc/ -type f -name 'README' -exec rm {} \;
+rm -rf /etc/*- /etc/iptables/{empty.rules,simple_firewall.rules} /etc/skel/*
 
-echo \>\> Cleaning Package Manager
-sudo find /etc/ -type f -name '*.pacnew' -exec rm {} \;
-sudo find /etc/ -type f -name '*.pacorig' -exec rm {} \;
-sudo find /etc/ -type f -name '*.pacsave' -exec rm {} \;
-sudo pacman -Sc --noconfirm &> /dev/null
+echo ">> Cleaning Pacman"
+find /etc/ -type f -name '*.pac*' -exec rm {} \;
+rm -rf /var/cache/pacman/pkg/*
+pacman -Sccq --noconfirm
 
-echo \>\> Cleaning Settings
-sudo rm -rf /etc/skel/*
-sudo rm -rf /etc/xdg/menus/*
-sudo cp /home/$USER/Backups/Settings/Menus/kde-applications.menu /etc/xdg/menus/
-sudo chmod 755 /etc/xdg/menus/kde-applications.menu
-sudo find /etc/ -type f -name '*.conf.default' -exec rm {} \;
-sudo find /etc/ -type f -name '*.example' -exec rm {} \;
-sudo find /etc/ -type f -name '*.OLD' -exec rm {} \;
-sudo find /etc/ -type f -name '*.optional' -exec rm {} \;
-sudo find /etc/ -type f -name '*.sample' -exec rm {} \;
-sudo find /etc/ -type f -name 'example.*' -exec rm {} \;
-sudo find /etc/ -type f -name 'README' -exec rm {} \;
-sudo rm -rf /etc/*- /etc/iptables/{empty.rules,simple_firewall.rules}
+echo ">> Cleaning Temporary Files"
+find / -type f -name '.directory' -exec rm {} \;
+find / -type f -name '.DS_Store' -exec rm {} \;
+find / -type f -name 'desktop.ini' -exec rm {} \;
+find / -type f -name 'Thumbs.db' -exec rm {} \;
 
-echo \>\> Cleaning Temporary Files
-sudo find / -type f -name '.directory' -exec rm {} \;
-sudo find / -type f -name '.DS_Store' -exec rm {} \;
-sudo find / -type f -name 'desktop.ini' -exec rm {} \;
-sudo find / -type f -name 'Thumbs.db' -exec rm {} \;
-
-echo \>\> Rebuilding Caches
+echo ">> Updating Caches"
 fc-cache -fr
-sudo fc-cache -fr
+update-ca-certificates
 update-desktop-database
-sudo update-desktop-database
-
-echo \>\> Updating Files
-kbuildsycoca4 --noincremental
-sudo update-ca-certificates
-sudo updatedb
+updatedb

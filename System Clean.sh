@@ -1,14 +1,14 @@
 #!/bin/bash
-# Cleans home and system.
+# Executes all cleaning scripts.
 
-sudo echo \>\> Begin Initialisation \<\<
-cd $(dirname $0)
+echo ">> Begin Initialisation <<"
+sudo cd $(dirname $0)
 
-echo \>\> Clean Home \<\<
-sh "Clean Home.sh"
+echo ">> Clean Home <<"
+bash clean-home.sh
 
-echo \>\> Clean System \<\<
-sh "Clean System.sh"
+echo ">> Clean System <<"
+sudo bash clean-system.sh
 
-echo \>\> Reset Permissions \<\<
-sh "Reset Permissions.sh"
+echo ">> Reset Permissions <<"
+bash reset-permissions.sh
