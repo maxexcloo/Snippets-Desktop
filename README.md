@@ -1,4 +1,5 @@
-Notes
-=====
+**Description**  
+This repository contains a collection of scripts for desktop management.
 
-This repository contains a collection of scripts I've worked on for desktop management. Many are likely to be outdated or broken.
+**Warning**  
+This repository is unsupported and code may be outdated or broken.
