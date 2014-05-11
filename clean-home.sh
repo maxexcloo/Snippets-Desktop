@@ -5,9 +5,6 @@
 ## Base ##
 ##########
 
-kbuildsycoca4 --noincremental
-fc-cache -fr
-
 # General
 rm -rf ~/.cache
 rm -rf ~/.config/autostart
