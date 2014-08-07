@@ -14,7 +14,7 @@ echo ">> Setting Permissions: Executables"
 find ~ -type f -executable -exec chmod 0755 {} \;
 
 echo ">> Setting Permissions: Launchers"
-find ~ -type f -name *.desktop -exec chmod 0755 {} \;
+find ~ -type f -name '*.desktop' -exec chmod 0755 {} \;
 
 echo ">> Setting Permissions: Scripts"
-find ~ -type f -name *.sh -exec chmod 0755 {} \;
+find ~ -type f -name '*.sh' -exec chmod 0755 {} \;
