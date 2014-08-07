@@ -1,15 +1,8 @@
 #!/bin/bash
 # Cleans unused files on the system.
 
-# Check Root
-if [[ $EUID -ne 0 ]]; then
-	echo "This script must be run as root."
-	exit 1
-fi
-
 echo ">> Setting Up"
 shopt -s dotglob
-umask 022
 
 echo ">> Cleaning Directories"
 find / -type d -name '*.unison.tmp*' -exec rm -rf {} \;
@@ -23,11 +16,10 @@ find /etc/ -type f -name '*.example' -exec rm {} \;
 find /etc/ -type f -name '*.example-*' -exec rm {} \;
 find /etc/ -type f -name 'example.*' -exec rm {} \;
 find /etc/ -type f -name 'README' -exec rm {} \;
-rm -rf /etc/*- /etc/iptables/{empty.rules,simple_firewall.rules} /etc/skel/*
+rm -rf /etc/*- /etc/iptables/* /etc/skel/*
 
 echo ">> Cleaning Pacman"
 find /etc/ -type f -name '*.pac*' -exec rm {} \;
-rm -rf /var/cache/pacman/pkg/*
 pacman -Sccq --noconfirm
 
 echo ">> Cleaning Temporary Files"
