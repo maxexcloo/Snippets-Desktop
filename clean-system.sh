@@ -8,7 +8,6 @@ echo ">> Updating Caches"
 fc-cache -fr
 update-ca-certificates
 update-desktop-database
-updatedb
 
 echo ">> Cleaning Cache Directories"
 find / -type d -name '*.unison.tmp*' -exec rm -rf {} \;
