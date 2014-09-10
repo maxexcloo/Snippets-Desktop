@@ -40,10 +40,10 @@ rm -rf ~/.ts3client/logs
 rm -rf ~/.thumbnails
 
 # VirtualBox
-rm -rf ~/.VirtualBox/*.dat
-rm -rf ~/.VirtualBox/*.log
-rm -rf ~/.VirtualBox/*.log.*
-rm -rf ~/.VirtualBox/*.xml-prev
+rm -rf ~/.config/VirtualBox/*.dat
+rm -rf ~/.config/VirtualBox/*.log
+rm -rf ~/.config/VirtualBox/*.log.*
+rm -rf ~/.config/VirtualBox/*.xml-prev
 rm -rf ~/Virtual\ Machines/*/*.vbox-prev
 rm -rf ~/Virtual\ Machines/*/Logs
 
@@ -73,6 +73,7 @@ rm -rf ~/.config/sublime-text-2/Backup
 rm -rf ~/.config/transmission/*.dat
 
 # Unity3D
+rm -rf ./.config/unity32/*.log
 rm -rf ~/.config/unity3d/Squad/*/*.log
 
 #########
