@@ -32,10 +32,6 @@ rm -rf ~/.java
 # PuTTY
 rm -rf ~/.putty/randomseed
 
-# TeamSpeak
-rm -rf ~/.ts3client/cache
-rm -rf ~/.ts3client/logs
-
 # Thumbnails
 rm -rf ~/.thumbnails
 
@@ -44,8 +40,10 @@ rm -rf ~/.config/VirtualBox/*.dat
 rm -rf ~/.config/VirtualBox/*.log
 rm -rf ~/.config/VirtualBox/*.log.*
 rm -rf ~/.config/VirtualBox/*.xml-prev
-rm -rf ~/Virtual\ Machines/*/*.vbox-prev
-rm -rf ~/Virtual\ Machines/*/Logs
+rm -rf ~/Resources/Virtual\ Machines/*/*.vbox-prev
+rm -rf ~/Resources/Virtual\ Machines/*/Logs
+rm -rf ~/VirtualBox\ VMs/*/*.vbox-prev
+rm -rf ~/VirtualBox\ VMs/*/Logs
 
 # X11
 rm -rf ~/.xsession-errors
@@ -57,7 +55,6 @@ rm -rf ~/.xsession-errors
 # Clementine
 rm -rf ~/.config/Clementine/*.bak
 rm -rf ~/.config/Clementine/jamendo.db
-rm -rf ~/.config/Clementine/spotify*
 
 # FileZilla
 rm -rf ~/.config/filezilla/queue.sqlite3
@@ -74,14 +71,12 @@ rm -rf ~/.config/transmission/*.dat
 
 # Unity3D
 rm -rf ./.config/unity32/*.log
-rm -rf ~/.config/unity3d/Squad/*/*.log
 
 #########
 ## KDE ##
 #########
 
 # Applications
-rm -rf ~/.kde4/share/apps/akonadi_migration_agent
 rm -rf ~/.kde4/share/apps/dolphin/view_properties
 rm -rf ~/.kde4/share/apps/kconf_update
 rm -rf ~/.kde4/share/apps/kfileplaces/bookmarks.xml.*
@@ -89,7 +84,6 @@ rm -rf ~/.kde4/share/apps/klipper
 rm -rf ~/.kde4/share/apps/konsole/*.xml.*
 rm -rf ~/.kde4/share/apps/kopete
 rm -rf ~/.kde4/share/apps/korganizer/*~
-rm -rf ~/.kde4/share/apps/kres-migrator
 rm -rf ~/.kde4/share/apps/okular/docdata
 rm -rf ~/.kde4/share/apps/okular/structures
 rm -rf ~/.kde4/share/apps/RecentDocuments

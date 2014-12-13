@@ -3,7 +3,7 @@
 
 # Empty Output Files
 echo -n "" > list.aur
-echo -n "" > list.official
+echo -n "" > list.arch
 
 # Loop Over Package List
 while read i; do
@@ -16,6 +16,6 @@ while read i; do
 		echo $i >> list.aur
 	else
 		# Add Name To List
-		echo $i >> list.official
+		echo $i >> list.arch
 	fi
 done < list

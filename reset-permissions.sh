@@ -2,7 +2,7 @@
 # Set default permissions on all files.
 
 echo ">> Setting Ownership"
-chown -R $USER:$GROUPS ~
+chown -R $USER:$USER ~
 
 echo ">> Setting Permissions: Directories"
 find ~ -type d -exec chmod 0755 {} \;

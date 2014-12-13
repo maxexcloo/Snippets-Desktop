@@ -6,7 +6,6 @@ shopt -s dotglob
 
 echo ">> Updating Caches"
 fc-cache -fr
-update-ca-certificates
 update-desktop-database
 
 echo ">> Cleaning Cache Directories"
