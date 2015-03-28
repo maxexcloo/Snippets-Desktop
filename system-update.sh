@@ -1,14 +1,14 @@
 #!/bin/bash
 # Update system packages with package manager.
 
-echo ">> Update Package List"
-pacman -Syy
+sudo echo ">> Update Package List"
+sudo pacman -Syy
 
 echo ">> Upgrade Packages"
 yaourt -Sauu
 
 echo ">> Remove Unused Packages"
-pacman -Rcns $(pacman -Qdqt)
+sudo pacman -Rcns $(pacman -Qdqt)
 
 echo ">> Clean Package Cache"
-pacman -Sc
+sudo pacman -Sc
