@@ -11,7 +11,13 @@ while read i; do
 
 	# Check Command Result
 	if [ $? != 0 ]; then
-		# Add Name To List
-		echo $i >> list.uninstalled
+		# Run Pacman Group Check
+		pacman -Qg $i
+
+		# Check Command Result
+		if [ $? != 0 ]; then
+			# Add Name To List
+			echo $i >> list.uninstalled
+		fi
 	fi
 done < list

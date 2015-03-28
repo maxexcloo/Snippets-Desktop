@@ -1,7 +1,7 @@
 #!/bin/bash
 # Update system packages with package manager.
 
-sudo echo ">> Update Package List"
+echo ">> Update Package List"
 pacman -Syy
 
 echo ">> Upgrade Packages"

@@ -11,4 +11,4 @@ echo ">> Clean System <<"
 sudo bash clean-system.sh
 
 echo ">> Reset Permissions <<"
-sudo bash reset-permissions.sh
+bash reset-permissions.sh
