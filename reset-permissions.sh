@@ -18,3 +18,6 @@ find ~ -type f -name '*.desktop' -exec chmod 0755 {} \;
 
 echo ">> Setting Permissions: Scripts"
 find ~ -type f -name '*.sh' -exec chmod 0755 {} \;
+
+echo ">> Setting Permissions: SSH"
+chmod 0600 ~/.ssh/id_rsa
