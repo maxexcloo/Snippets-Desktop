@@ -8,6 +8,7 @@ pacman -Scq --noconfirm
 echo ">> Cleaning Settings"
 find /etc/ -type f -name '*.example' -exec rm {} \;
 find /etc/ -type f -name '*.example-*' -exec rm {} \;
+find /etc/ -type f -name '*.sample' -exec rm {} \;
 find /etc/ -type f -name 'README' -exec rm {} \;
 find /etc/ -type f -name 'example.*' -exec rm {} \;
 rm -f /etc/*-
