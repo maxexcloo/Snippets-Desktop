@@ -1,5 +1,5 @@
 #!/bin/bash
-# Set default permissions on all files.
+# Set default permissions on all files and folders.
 
 echo ">> Setting Ownership"
 chown -R $USER:$USER ~

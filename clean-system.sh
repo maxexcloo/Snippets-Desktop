@@ -1,5 +1,5 @@
 #!/bin/bash
-# Cleans unused files on the system.
+# Clean unused files on the system.
 
 echo ">> Cleaning Pacman"
 find /etc/ -type f -name '*.pac*' -exec rm {} \;
@@ -15,7 +15,6 @@ rm -f /etc/*-
 rm -f /etc/iptables/*
 rm -f /etc/lirc/lircd.conf.d/README.conf.d
 rm -f /etc/pango/pango.modules
-rm -f /etc/pkcs11/pkcs11.conf.example
 rm -f /etc/samba/smb.conf.default
 rm -f /etc/skel/.??*
 rm -f /etc/ssh/moduli

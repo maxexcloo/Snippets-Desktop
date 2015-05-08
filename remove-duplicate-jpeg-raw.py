@@ -20,6 +20,7 @@ raw_ext = (raw_extension.lower(), raw_extension.upper())
 for path, dirs, files in os.walk(os.path.abspath(scan_dir)):
     print(path)
     raw_hash = {}
+
     for raw in locate(path, raw_ext):
         base_name = os.path.basename(raw)
         base_name = os.path.splitext(base_name)[0]
