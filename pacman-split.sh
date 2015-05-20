@@ -4,6 +4,7 @@
 # Empty Output Files
 echo -n "" > list.aur
 echo -n "" > list.official
+echo -n "" > list.uninstalled
 
 # Loop Over Package List
 while read i; do
